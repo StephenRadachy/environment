@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+# backup pre-existing rc
+if [[ -a ${HOME}/.zshrc ]]; then
+	mv "${HOME}/.zshrc" "${HOME}/.zshrc.bak"
+fi
+
+# install Oh-My-Zsh
+if [[ -a ${HOME}/.oh-my-zsh ]]; then
+	rm -rf ${HOME}/.oh-my-zsh
+fi
+git clone https://github.com/robbyrussell/oh-my-zsh.git --depth 1 ${HOME}/.oh-my-zsh
+
+# update .zshrc to run repo zshrc.sh file
+echo "source ${0:a:h}/configure" > ${HOME}/.zshrc
+
+# run setup scripts
+for script in ${0:a:h}/setup/scripts/*.zsh; do
+	source $script
+done
+
+# change shell and startup
+chsh -s "$(which zsh)"
+/usr/bin/env zsh
