@@ -1,21 +1,27 @@
-# ZSH-Base
+# Environment
 
-ZSH-Base is a cross-platform bare-bones repo to use as a base for building modular custom Oh My Zsh configurations. Check out https://github.com/StephenRadachy/environment for an example config.
+![screenshot](screenshot.png)
+
+My Mac OS terminal configuration plus some other goodies. Based off of https://github.com/StephenRadachy/zsh-base
+
+## Unique Features
+- Color-coded path relative to the root directory, your home directory, or any git repository
+- Lots of [tasty software](setup/scripts/01-homebrew.zsh)
+- Powerline fonts (installed to ```/tmp/fonts```)
+- iTerm2 color schemes (installed to ```/tmp/iTerm2-Color-Schemes```)
+
+## Recommended Configuration
+- Emulator: iTerm2
+- Font: 13pt inconsolata for Powerline
+- Color scheme: Argonaut
 
 ## Prerequisites
 - zsh ([instructions](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH))
 - git
 - curl
+- homebrew ([instructions](https://brew.sh/))
 
 ## Instructions
-- Fork this repo
-- Customize to your hearts desire ([link to Oh My Zsh wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/Customization))
-    - ```lib``` for overriding Oh My Zsh interals
-    - ```plugins``` for Oh My Zsh plugins
-    - ```setup``` for scripts and files to include on setup
-    - ```themes``` for Oh My Zsh themes
-    - ```configure``` for Oh My Zsh configuration
-- run ```./install```
+- Clone this repo
+- Run ```./install```
 - PROFIT
-
-For more information about Oh My Zsh, checkout https://github.com/robbyrussell/oh-my-zsh

@@ -1,0 +1,13 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	pager = less
+[color]
+	ui = auto
+[user]
+	name = Stephen J Radachy
+	email = stephen@radachy.com
+[push]
+	default = simple
+[alias]
+	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

@@ -3,6 +3,7 @@ copy(){
 	cp "${0:a:h}/setup/files/$1" "$2"
 }
 
-#copy .example ${HOME}
+copy .gitconfig ~
+copy .slate ~
 
-echo "test"
+eval 'mkdir ~/Code 2> /dev/null'

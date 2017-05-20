@@ -1,0 +1,33 @@
+# Slate documentation:
+# https://github.com/jigish/slate
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Push Bindings
+
+# 1/2 of screen
+bind right:ctrl;cmd  push right bar-resize:screenSizeX/2
+bind left:ctrl;cmd   push left  bar-resize:screenSizeX/2
+
+# 1/3 of screen
+bind right:alt;cmd  push right bar-resize:screenSizeX/3
+bind left:alt;cmd   push left  bar-resize:screenSizeX/3
+bind up:alt;cmd chain push left bar-resize:screenSizeX/3 | push up center
+bind down:alt;cmd chain push left bar-resize:screenSizeX/3 | push up center
+
+# 2/3 of screen
+bind left:shift;cmd   push left  bar-resize:2*screenSizeX/3
+bind right:shift;cmd   push right  bar-resize:2*screenSizeX/3
+
+# fullscreen
+bind up:ctrl;cmd     push up    bar-resize:screenSizeY
+bind down:ctrl;cmd   push down  bar-resize:screenSizeY
+
+
+## Throw Bindings
+bind right:ctrl;alt;cmd throw right
+bind left:ctrl;alt;cmd  throw left 
+bind up:ctrl;alt;cmd    throw up   
+bind down:ctrl;alt;cmd  throw down 
