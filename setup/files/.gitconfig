@@ -2,6 +2,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 	pager = less
+	ignorecase = false
 [color]
 	ui = auto
 [user]
