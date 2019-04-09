@@ -1,1 +1,1 @@
-brew alias sync='!brew update && brew upgrade && brew cleanup'
+brew alias sync='!brew update && brew upgrade && brew cask upgrade && brew cleanup'

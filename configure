@@ -5,7 +5,39 @@ ZSH="${HOME}/.oh-my-zsh"
 
 # Configurables
 ZSH_THEME="sjradach"
-plugins=(osx git brew-cask nvm golang mvn colored-man-ages jsontools systemadmin ++ brew++ git++ go google-cloud java maven ssh++ steam vpn)
+plugins=(
+    # builtin plugins
+    brew
+    cargo
+    colored-man-ages
+    git
+    golang
+    jira
+    jsontools
+    mvn
+    nvm
+    osx
+    python
+    systemadmin
+    virtualenv
+    xcode
+    zsh_reload
+    
+    # custom plugins
+    ++
+    brew++
+    git++
+    go
+    java
+    macos++
+    maven
+    python++
+    ssh++
+    steam
+    vpn
+    work
+    xcode++
+)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
