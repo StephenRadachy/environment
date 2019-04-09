@@ -1,2 +1,2 @@
-export PATH=/usr/local/anaconda3/bin:"$PATH"
+export PATH="$HOME/.poetry/bin:/usr/local/anaconda3/bin:$PATH"
 source $HOME/.poetry/env
