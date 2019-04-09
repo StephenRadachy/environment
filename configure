@@ -9,7 +9,7 @@ plugins=(
     # builtin plugins
     brew
     cargo
-    colored-man-ages
+    colored-man-pages
     git
     golang
     jira
