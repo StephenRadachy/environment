@@ -11,10 +11,8 @@ plugins=(
     cargo
     colored-man-pages
     git
-    golang
     jira
     jsontools
-    mvn
     nvm
     osx
     python
@@ -27,10 +25,7 @@ plugins=(
     ++
     brew++
     git++
-    go
-    java
     macos++
-    maven
     python++
     ssh++
     steam
