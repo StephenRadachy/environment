@@ -27,6 +27,7 @@ plugins=(
     git++
     macos++
     python++
+    ruby++
     ssh++
     steam
     vpn
