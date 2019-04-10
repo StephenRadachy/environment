@@ -14,20 +14,46 @@ bind left:ctrl;cmd   push left  bar-resize:screenSizeX/2
 # 1/3 of screen
 bind right:alt;cmd  push right bar-resize:screenSizeX/3
 bind left:alt;cmd   push left  bar-resize:screenSizeX/3
-bind up:alt;cmd chain push left bar-resize:screenSizeX/3 | push up center
-bind down:alt;cmd chain push left bar-resize:screenSizeX/3 | push up center
+bind up:alt;cmd     sequence push left bar-resize:screenSizeX/3 | push up center
+bind down:alt;cmd   sequence push left bar-resize:screenSizeX/3 | push up center
 
 # 2/3 of screen
-bind left:shift;cmd   push left  bar-resize:2*screenSizeX/3
-bind right:shift;cmd   push right  bar-resize:2*screenSizeX/3
+bind left:shift;cmd     push left  bar-resize:2*screenSizeX/3
+bind right:shift;cmd    push right  bar-resize:2*screenSizeX/3
+
+
+# center 1/2 of screen
+bind up:ctrl;alt     sequence push left bar-resize:screenSizeX/2 | push up center
+bind down:ctrl;alt   sequence push left bar-resize:screenSizeX/2 | push up center
+
+# 1/4 of screen
+bind right:ctrl;alt  push right bar-resize:screenSizeX/4
+bind left:ctrl;alt   push left  bar-resize:screenSizeX/4
+
+# top or bottom half of screen
+bind up:alt;shift   sequence move windowTopLeftX;0 windowSizeX;screenSizeY/2 | push up
+bind down:alt;shift sequence move windowTopLeftX;screenSizeY/2 windowSizeX;screenSizeY/2 | push down
+
+# vertical 3rd of screen
+bind up:ctrl;shift   sequence move windowTopLeftX;0 windowSizeX;screenSizeY/3 | push up
+bind down:ctrl;shift sequence move windowTopLeftX;screenSizeY/3*2 windowSizeX;screenSizeY/3 | push down
+bind left:ctrl;shift sequence move windowTopLeftX;0 windowSizeX;screenSizeY | resize +0 -1*screenSizeY/3 top-left 
+bind right:ctrl;shift sequence move windowTopLeftX;0 windowSizeX;screenSizeY | resize +0 -1*screenSizeY/3 top-left 
+
+#bind left:ctrl;shift sequence move windowTopLeftX;screenOriginY windowSizeX;screenSizeY/3
+#bind right:ctrl;shift sequence move windowTopLeftX;screenSizeY/3 windowSizeX;screenSizeY/3
 
 # fullscreen
 bind up:ctrl;cmd     push up    bar-resize:screenSizeY
 bind down:ctrl;cmd   push down  bar-resize:screenSizeY
 
-
-## Throw Bindings
+# Throw Bindings
 bind right:ctrl;alt;cmd throw right
 bind left:ctrl;alt;cmd  throw left 
 bind up:ctrl;alt;cmd    throw up   
-bind down:ctrl;alt;cmd  throw down 
+bind down:ctrl;alt;cmd  throw down
+
+
+# system_profiler SPDisplaysDataType | grep Resolution | tail -n 1 | awk '{print $4}'
+# /usr/local/bin/screenresolution get 2>&1 | grep -oE '[0-9]+?x[0-9]+' | head -n 1 | grep -Eo '[0-9]+$'
+#alias 
