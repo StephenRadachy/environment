@@ -38,3 +38,24 @@ nv() {
     *) echo "see repo for documentation"
     esac
 }
+
+fast_download() {
+    if [ $# -eq 1 ] && [ $1 != "-H" ] && [ $1 != "--help" ] && [[ $1 =~ "curl" ]]; then
+        if ! type "brew" > /dev/null; then
+            echo 'Error: Homebrew is not installed.'
+            echo 'Checkout https://brew.sh/ for installation'
+        fi
+        if ! type "aria2c" > /dev/null; then
+            echo 'Please hold on while aria2 is being installed'
+            brew install aria2
+        fi
+
+        command=$(echo $1 | sed 's/curl/aria2c -x16/g' | sed 's/ --compressed//g' | sed 's/-H/--header/g')
+        eval $command
+    else
+        echo 'fast_download "<curl-command>"'
+        echo 
+        echo 'Converts curl commands to aria2 for maximum throughput 💪🔥'
+        echo 'Aria2 docs: https://aria2.github.io/'
+    fi
+}
