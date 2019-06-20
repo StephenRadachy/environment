@@ -50,7 +50,7 @@ fast_download() {
             brew install aria2
         fi
 
-        command=$(echo $1 | sed 's/curl/aria2c -x16/g' | sed 's/ --compressed//g' | sed 's/-H/--header/g')
+        command=$(echo $1 | sed 's/curl/aria2c -x16/g' | sed 's/--compressed/--http-accept-gzip true/g' | sed 's/-H/--header/g' | sed 's/(--insecure|)/--check-certificate false/g')
         eval $command
     else
         echo 'fast_download "<curl-command>"'
